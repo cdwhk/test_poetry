@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "project-test-poetry-init-test" # Wichtig: Dieser Name  muss mit dem Namen des Python Packages übereinstimmen
+version = "0.0.1"
+description = "Das hier ist eine Testbeschreibung"
+authors = ["Your Name <you@example.com>"]
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+
+
+[tool.poetry.scripts]
+corvsches_test_script = "project_test_poetry_init_test.main:main" #In einem String: "projekt_name.modul_name:methoden_name"
+# ruft im Modul main die Methode main auf, wenn das Skript ausgeführt wird
+# Skript kann über die Kommandozeile aufgerufen werden mit: poetry run corvsches_test_script
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
